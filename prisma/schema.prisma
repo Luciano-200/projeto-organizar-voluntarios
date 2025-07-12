@@ -1,0 +1,121 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id        Int        @id @default(autoincrement())
+  name      String     @db.VarChar(255)
+  email     String     @unique @db.VarChar(255)
+  password  String     @db.VarChar(255)
+  organizer Organizer?
+  volunteer Volunteer?
+  user      User?      @default(User)
+}
+
+model Organizer {
+  id        Int      @id @default(autoincrement())
+  accountId Int      @unique
+  account   Account? @relation(fields: [accountId], references: [id])
+}
+
+model Volunteer {
+  id               Int              @id @default(autoincrement())
+  accountId        Int              @unique
+  account          Account?         @relation(fields: [accountId], references: [id])
+  region           Region
+  availabilityTime Availability
+  availability     String?
+  equipment        String?          @db.VarChar(255)
+  expertise        Expertise?       @default(Nenhuma)
+  status           VolunteerStatus? @default(Fez_Contato)
+  phoneNumber      String?          @db.VarChar(255)
+  tasks            Tasks[]
+}
+
+model Needs {
+  id             Int             @id @default(autoincrement())
+  needs          String
+  categoryOfNeed CategoryOfNeed?
+}
+
+model Tasks {
+  id         Int         @id @default(autoincrement())
+  objectives String      @db.VarChar(255)
+  details    String?
+  volunteers Volunteer[]
+  equipments String?
+  startDate  DateTime
+  endDate    DateTime?
+  status     TaskStatus? @default(Marcada)
+}
+
+enum Expertise {
+  Nenhuma
+  Medico
+  Enfermeiro
+  Bombeiro
+  Psicologo
+  Policial
+  SalvaVidas
+  Engenheiro
+  Veterinario
+}
+
+enum TaskStatus {
+  Marcada
+  Iniciada
+  Terminada
+}
+
+enum CategoryOfNeed {
+  Alimento
+  Roupa_E_Calcados
+  Higiene_Pessoal
+  Limpeza
+  Itens_De_Cama
+  Moveis
+  Dinheiro
+  Especialista
+  Voluntario
+}
+
+enum VolunteerStatus {
+  Fez_Contato
+  Selecionado
+  Encerrado
+}
+
+enum Region {
+  Outro_Pais
+  Regiao_Sul
+  Regiao_Nordeste
+  Regiao_Norte
+  Regiao_Sudeste
+  Regiao_Centro_Oeste
+}
+
+enum Availability {
+  Manha
+  Tarde
+  Noite
+  ManhaTarde
+  ManhaNoite
+  TardeNoite
+  ManhaTardeNoite
+}
+
+enum User {
+  User
+  Admin
+}
