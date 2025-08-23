@@ -1,9 +1,9 @@
 import { Volunteer } from "@prisma/client"
 
-export type Regions = "Outro_Pais"|"Regiao_Sul"|"Regiao_Nordeste"| "Regiao_Norte"| "Regiao_Sudeste"| "Regiao_Centro_Oeste"
-export type Times = "Manha"|"Tarde"|"Noite"|"ManhaTarde"|"ManhaNoite"|"TardeNoite"|"ManhaTardeNoite"
-export type VolunteerExpertises = "Nenhuma"|"Medico"|"Enfermeiro"|"Bombeiro"|"Psicologo"|"Policial"|"SalvaVidas"|"Engenheiro"|"Veterinario"
-export type VolunteerStatus = "Fez_Contato"|"Selecionado"|"Encerrado"
+export type Regions = "INTERNATIONAL"|"NORTH"|"NORTHEAST"|"SOUTH"|"SOUTHEAST"|"CENTRAL_WEST"
+export type Times = "MORNING"|"AFTERNOON"|"EVENING"|"MORNING_AFTERNOON"|"MORNING_EVENING"|"AFTERNOON_EVENING"|"FULL_DAY"
+export type VolunteerExpertises = "NONE"|"DOCTOR"|"NURSE"|"FIREFIGHTER"|"PSYCHOLOGIST"|"POLICE_OFFICER"|"LIFEGUARD"|"ENGINEER"|"VETERINARIAN"
+export type VolunteerStatus = "CONTACTED"|"SELECTED"|"CLOSED"
 
 export interface CreateVolunteerAttributes {
     accountId: number

@@ -1,9 +1,9 @@
 import { z } from "zod";
 
 const TaskStatus = z.enum([
-    "Marcada",
-    "Iniciada",
-    "Terminada"
+    "SCHEDULED",
+  "STARTED",
+  "COMPLETED"
 ])
 
 export const CreateTaskRequestSchema = z.object({

@@ -20,7 +20,7 @@ model Account {
   password  String     @db.VarChar(255)
   organizer Organizer?
   volunteer Volunteer?
-  user      User?      @default(User)
+  user      User?      @default(USER)
 }
 
 model Organizer {
@@ -37,8 +37,8 @@ model Volunteer {
   availabilityTime Availability
   availability     String?
   equipment        String?          @db.VarChar(255)
-  expertise        Expertise?       @default(Nenhuma)
-  status           VolunteerStatus? @default(Fez_Contato)
+  expertise        Expertise?       @default(NONE)
+  status           VolunteerStatus? @default(CONTACTED)
   phoneNumber      String?          @db.VarChar(255)
   tasks            Tasks[]
 }
@@ -57,65 +57,65 @@ model Tasks {
   equipments String?
   startDate  DateTime
   endDate    DateTime?
-  status     TaskStatus? @default(Marcada)
+  status     TaskStatus? @default(SCHEDULED)
 }
 
 enum Expertise {
-  Nenhuma
-  Medico
-  Enfermeiro
-  Bombeiro
-  Psicologo
-  Policial
-  SalvaVidas
-  Engenheiro
-  Veterinario
+  NONE
+  DOCTOR
+  NURSE
+  FIREFIGHTER
+  PSYCHOLOGIST
+  POLICE_OFFICER
+  LIFEGUARD
+  ENGINEER
+  VETERINARIAN
 }
 
 enum TaskStatus {
-  Marcada
-  Iniciada
-  Terminada
+  SCHEDULED
+  STARTED
+  COMPLETED
 }
 
 enum CategoryOfNeed {
-  Alimento
-  Roupa_E_Calcados
-  Higiene_Pessoal
-  Limpeza
-  Itens_De_Cama
-  Moveis
-  Dinheiro
-  Especialista
-  Voluntario
+  FOOD
+  CLOTHING_AND_FOOTWEAR
+  PERSONAL_HYGIENE
+  CLEANING_SUPPLIES
+  BEDDING
+  FURNITURE
+  MONEY
+  SPECIALIST
+  VOLUNTEER
 }
 
 enum VolunteerStatus {
-  Fez_Contato
-  Selecionado
-  Encerrado
+  CONTACTED
+  SELECTED
+  CLOSED
 }
 
 enum Region {
-  Outro_Pais
-  Regiao_Sul
-  Regiao_Nordeste
-  Regiao_Norte
-  Regiao_Sudeste
-  Regiao_Centro_Oeste
+  INTERNATIONAL
+  NORTH
+  NORTHEAST
+  SOUTH
+  SOUTHEAST
+  CENTRAL_WEST
 }
 
 enum Availability {
-  Manha
-  Tarde
-  Noite
-  ManhaTarde
-  ManhaNoite
-  TardeNoite
-  ManhaTardeNoite
+  MORNING
+  AFTERNOON
+  EVENING
+  MORNING_AFTERNOON
+  MORNING_EVENING
+  AFTERNOON_EVENING
+  FULL_DAY
 }
 
 enum User {
-  User
-  Admin
+  USER
+  ADMIN
 }

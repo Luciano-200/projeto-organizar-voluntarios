@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 
-const jwtSecret = 'chave-secreta-jwt'
+const jwtSecret = process.env.JWT_SECRET!
 
 import { Handler } from "express";
 import { HttpError, to } from "../errors/HttpError";

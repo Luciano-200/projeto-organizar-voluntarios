@@ -1,6 +1,6 @@
 import { Needs } from "@prisma/client";
 
-export type Categorys = "Alimento"|"Roupa_E_Calcados"|"Higiene_Pessoal"|"Limpeza"|"Itens_De_Cama"|"Moveis"|"Dinheiro"|"Especialista"|"Voluntario"
+export type Categorys = "FOOD"|"CLOTHING_AND_FOOTWEAR"|"PERSONAL_HYGIENE"|"CLEANING_SUPPLIES"|"BEDDING"|"FURNITURE"|"MONEY"|"SPECIALIST"|"VOLUNTEER"
 
 export interface CreateNeedsAttributes {
     needs: string

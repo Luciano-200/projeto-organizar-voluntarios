@@ -1,15 +1,15 @@
 import { z } from "zod";
 
 const Categorys = z.enum([
-    "Alimento",
-    "Roupa_E_Calcados",
-    "Higiene_Pessoal",
-    "Limpeza",
-    "Itens_De_Cama",
-    "Moveis",
-    "Dinheiro",
-    "Especialista",
-    "Voluntario"
+    "FOOD",
+  "CLOTHING_AND_FOOTWEAR",
+  "PERSONAL_HYGIENE",
+  "CLEANING_SUPPLIES",
+  "BEDDING",
+  "FURNITURE",
+  "MONEY",
+  "SPECIALIST",
+  "VOLUNTEER"
 ])
 
 export const CreateNeedRequestSchema = z.object({

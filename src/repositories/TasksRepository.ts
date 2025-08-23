@@ -1,6 +1,6 @@
 import { Tasks } from "@prisma/client"
 
-export type TaskStatus = "Marcada"|"Iniciada"|"Terminada"
+export type TaskStatus = "SCHEDULED"|"STARTED"|"COMPLETED"
 
 export interface CreateTaskAttributes {
     objectives: string

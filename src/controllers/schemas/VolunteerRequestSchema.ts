@@ -1,40 +1,40 @@
 import { z } from "zod";
 
 const Regions = z.enum([
-    "Outro_Pais",
-    "Regiao_Sul",
-    "Regiao_Nordeste",
-    "Regiao_Norte",
-    "Regiao_Sudeste",
-    "Regiao_Centro_Oeste"
+    "INTERNATIONAL",
+  "NORTH",
+  "NORTHEAST",
+  "SOUTH",
+  "SOUTHEAST",
+  "CENTRAL_WEST"
 ])
 
 const Times = z.enum([
-    "Manha",
-    "Tarde",
-    "Noite",
-    "ManhaTarde",
-    "ManhaNoite",
-    "TardeNoite",
-    "ManhaTardeNoite"
+    "MORNING",
+  "AFTERNOON",
+  "EVENING",
+  "MORNING_AFTERNOON",
+  "MORNING_EVENING",
+  "AFTERNOON_EVENING",
+  "FULL_DAY"
 ])
 
 const VolunteerExpertises = z.enum([
-    "Nenhuma",
-    "Medico",
-    "Enfermeiro",
-    "Bombeiro",
-    "Psicologo",
-    "Policial",
-    "SalvaVidas",
-    "Engenheiro",
-    "Veterinario"
+    "NONE",
+  "DOCTOR",
+  "NURSE",
+  "FIREFIGHTER",
+  "PSYCHOLOGIST",
+  "POLICE_OFFICER",
+  "LIFEGUARD",
+  "ENGINEER",
+  "VETERINARIAN"
 ])
 
 const VolunteerStatus = z.enum([
-    "Fez_Contato",
-    "Selecionado",
-    "Encerrado"
+    "CONTACTED",
+  "SELECTED",
+  "CLOSED"
 ])
 
 export const CreateVolunteerRequestSchema = z.object({
