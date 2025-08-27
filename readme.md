@@ -53,13 +53,13 @@ Durante o desenvolvimento deste projeto, aprendi sobre:
 - Autenticação segura com JWT
 - Boas práticas de organização de código em projetos back-end
 - Uso de Git e GitHub para versionamento
-- Prática dos conhecimentos adquiridos ao longo do curso
+- Prática dos conhecimentos adquiridos
 
 ## Observações
 
-Este projeto está em fase de refinamento. Algumas migrations iniciais foram mantidas como parte do processo de aprendizado. O código está todo em inglês, mas o README está em português.
+Este projeto está em fase de refinamento. Algumas migrations iniciais foram mantidas. O código está todo em inglês, mas o README está em português.
 
 ##  Autor
 
 Luciano
-Desenvolvedor em formação, focado em back-end com Node.js e TypeScript.
+Desenvolvedor, focado em back-end com Node.js e TypeScript. 
